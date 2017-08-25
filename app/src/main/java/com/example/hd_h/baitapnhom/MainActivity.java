@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(contactIntent);
                 return true;
             case R.id.itemControduction:
+                Intent appIntroIntent = new Intent(MainActivity.this, AppIntroductionActivity.class);
+                startActivity(appIntroIntent);
                 return true;
         }
         return false;
