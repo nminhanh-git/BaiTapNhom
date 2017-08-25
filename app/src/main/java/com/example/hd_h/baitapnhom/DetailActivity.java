@@ -53,7 +53,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                Toast.makeText(DetailActivity.this,"Đã theo dõi",Toast.LENGTH_SHORT);
+                Toast.makeText(DetailActivity.this,"Đã theo dõi",Toast.LENGTH_SHORT).show();
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
