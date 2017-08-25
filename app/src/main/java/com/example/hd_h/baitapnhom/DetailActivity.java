@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DetailActivity extends AppCompatActivity {
     Button button;
@@ -52,6 +53,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
+                Toast.makeText(DetailActivity.this,"Đã theo dõi",Toast.LENGTH_SHORT);
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
