@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -42,24 +40,7 @@ public class DetailActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.optionmenu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.itemContact:
-                Intent contactIntent = new Intent(DetailActivity.this, TeamInfoActivity.class);
-                startActivity(contactIntent);
-                return true;
-            case R.id.itemControduction:
-                return true;
-        }
-        return false;
-    }
 
     private void AlertDialogFun() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
