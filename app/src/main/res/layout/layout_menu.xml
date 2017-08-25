@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#e9f1ba"
+    android:stretchColumns="*">
+    <TableRow>
+        <TextView
+            android:layout_span="2"
+            android:text="Confirmation."
+            android:padding="5dp"
+            android:background="#d5dda6"
+            android:textSize="18dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_span="2"
+            android:text="Bạn Có Muốn Theo Dõi Không ?"
+            android:padding="5dp"
+            android:background="#d5dda6"
+            android:textSize="15dp"
+            />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/dialog_positive_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_alignParentRight="true"
+            android:inputType="number"
+            android:background="#dde5ad"
+
+            />
+        <Button
+            android:id="@+id/dialog_negative_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:layout_toLeftOf="@id/dialog_positive_btn"
+            android:background="#dde5ad"
+            android:layout_marginRight="3dp"
+            android:layout_alignBaseline="@id/dialog_positive_btn"
+            />
+    </TableRow>
+
+</TableLayout>
