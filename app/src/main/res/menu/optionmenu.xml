@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
- <item android:id="@+id/itemContact" android:title="Liên Hệ"></item>
-    <item android:title="Giới Thiệu" android:id="@+id/itemControduction"></item>
+    <item
+        android:id="@+id/itemContact"
+        android:title="Liên Hệ"></item>
+    <item
+        android:id="@+id/itemControduction"
+        android:title="Giới Thiệu"></item>
 </menu>
