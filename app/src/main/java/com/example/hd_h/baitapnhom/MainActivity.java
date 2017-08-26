@@ -22,18 +22,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         studentListView = (ListView) findViewById(R.id.student_list_view);
         listSinhVien = new ArrayList<>();
-        Student student1 = new Student("Lê Văn Sáng", "CNTT3_K56", "20/09/1997", "Nam Trực - Nam Định");
-        Student student2 = new Student("Nguyễn Đan Trường", "CNTT3_K56", "20/09/1997", "Đống Đa - Hà Nội");
-        Student student3 = new Student("Đàm Vĩnh Hưng", "CNTT3_K56", "20/09/1997", "Quận 1 - Sài Gòn");
-        Student student4 = new Student("Công Phượng", "CNTT3_K56", "20/09/1997", "Quỳnh Lưu - Nghệ An");
-        Student student5 = new Student("Bao Công", "CNTT3_K56", "20/09/1997", "Khai Phong - Trung Quốc");
-        Student student6 = new Student("Tôn Ngộ Không", "CNTT3_K56", "20/09/1997", "Hoa Qủa Sơn - Trung Quốc");
+        Student student1 = new Student("Lê Văn Sáng", "CNTT3-K56", "20/09/1997", "Nam Trực - Nam Định", "Nam");
+        Student student2 = new Student("Nguyễn Đan Trường", "CNTT3-K56", "20/09/1997", "Đống Đa - Hà Nội", "Nam");
+        Student student3 = new Student("Đàm Vĩnh Hưng", "CNTT3-K56", "20/09/1997", "Quận 1 - Sài Gòn", "Nam");
+        Student student4 = new Student("Công Phượng", "CNTT3-K56", "20/09/1997", "Quỳnh Lưu - Nghệ An", "Nam");
+        Student student5 = new Student("Bao Công", "CNTT3-K56", "20/09/1997", "Khai Phong - Trung Quốc", "Nam");
+        Student student6 = new Student("Tôn Ngộ Không", "CNTT3-K56", "20/09/1997", "Hoa Quả Sơn - Trung Quốc", "Nam");
+        Student student7 = new Student("Điêu Thuyền", "CNTT3-K56", "20/09/1997", "Trung Quốc", "Nữ");
+        Student student8 = new Student("Bà Tưng", "CNTT3-K56", "20/09/1997", "Hà Nội - Việt Nam", "Nữ");
+        Student student9 = new Student("Ariana Grande", "CNTT3-K56", "20/09/1997", "Los Angles - United States", "Nữ");
         listSinhVien.add(student1);
         listSinhVien.add(student2);
         listSinhVien.add(student3);
         listSinhVien.add(student4);
         listSinhVien.add(student5);
         listSinhVien.add(student6);
+        listSinhVien.add(student7);
+        listSinhVien.add(student8);
+        listSinhVien.add(student9);
         SinhVienAdapter adapter = new SinhVienAdapter(MainActivity.this, R.layout.student_row_layout, listSinhVien);
         studentListView.setAdapter(adapter);
 
@@ -45,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 studentBundle.putString("class", listSinhVien.get(i).getLop());
                 studentBundle.putString("birthday", listSinhVien.get(i).getNgaySinh());
                 studentBundle.putString("address", listSinhVien.get(i).getDiaChi());
+                studentBundle.putString("gender", listSinhVien.get(i).getGioiTinh());
                 Intent detailIntent = new Intent(MainActivity.this, DetailActivity.class);
                 detailIntent.putExtra("packet", studentBundle);
                 startActivity(detailIntent);

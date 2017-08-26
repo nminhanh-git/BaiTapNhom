@@ -7,12 +7,15 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class DetailActivity extends AppCompatActivity {
     Button button;
     TextView textViewName, textViewBirth, textViewClass, textViewAddress;
+    RadioButton rdNam, rdNu;
+    String textGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,8 @@ public class DetailActivity extends AppCompatActivity {
         textViewBirth = (TextView) findViewById(R.id.txtBirthDay);
         textViewClass = (TextView) findViewById(R.id.txtClass);
         textViewAddress = (TextView) findViewById(R.id.txtAddress);
+        rdNam = (RadioButton) findViewById(R.id.rdNam);
+        rdNu = (RadioButton) findViewById(R.id.rdNu);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("packet");
@@ -31,7 +36,8 @@ public class DetailActivity extends AppCompatActivity {
         textViewBirth.setText(bundle.getString("birthday"));
         textViewAddress.setText(bundle.getString("address"));
         textViewClass.setText(bundle.getString("class"));
-
+        textGender = bundle.getString("gender");
+        setGender();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,7 +46,13 @@ public class DetailActivity extends AppCompatActivity {
         });
     }
 
-
+    public void setGender() {
+        if (textGender.equalsIgnoreCase("Nam")) {
+            rdNam.setChecked(true);
+        } else {
+            rdNu.setChecked(true);
+        }
+    }
 
     private void AlertDialogFun() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
